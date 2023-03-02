@@ -50,7 +50,11 @@ Array.prototype.myEvery = function(callbackFn) {
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+  let num = 0;
+  for (let i = 0; i < this.length; i++){
+      num += callbackFn(this[i], i)
+  }
+  return num;
 };
 
 // INCLUDES //
