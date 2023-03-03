@@ -98,5 +98,56 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  // Place your code here.
+  let newArray = []
+  for (var prop in object){
+    newArray.push(object[prop])
+  }
+  return newArray;
 };
+
+
+let arr = [1,2,3]
+arr = arr.myMap(e => e*2);
+console.log(arr);
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.myFilter(word => word.length > 6);
+console.log(result);
+
+const array = [1, 2, 3, 4, 5];
+// Checks whether an element is even
+const even = (element) => element % 2 === 0;
+console.log(array.mySome(even));
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.myEvery(isBelowThreshold));
+// Expected output: true
+
+
+const array2 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array2.myReduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.myKeys(object1));
+// Expected output: Array ["a", "b", "c"]
+
+// Expected output: 10
+
+
+console.log(Object.myValues(object1));
