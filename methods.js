@@ -78,12 +78,22 @@ Array.prototype.myIndexOf = function(searchElement) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+  var index;
+  for(let i = 0; i < this.length; i++){
+    if(searchElement == this[i]){
+      index = i;
+    }
+  }
+  return index;
 };
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+  let newArray = []
+  for (var prop in object) {
+    newArray.push(prop)
+  }
+  return newArray;
 };
 
 // VALUES //
